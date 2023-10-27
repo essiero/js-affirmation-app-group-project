@@ -18,8 +18,9 @@ body {
 }
 header {
   height: 8em;
-  background-color: #7a7a7a;
+  background-color: #663399;
   text-align: center;
+  color: #FFFFF0
 }
 main {
   flex: auto;
@@ -28,7 +29,7 @@ main {
 }
 footer {
   height: 8em;
-  background-color: #7a7a7a;
+  background-color: #663399;
   text-align: center;
 }
 
@@ -39,6 +40,8 @@ header, footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #FFFFF0;
+  
 }
 h1 {
   font-size: 2.5em;
@@ -61,6 +64,10 @@ button {
   width: 75px;
 }
 
+.submit-button {
+  background-color: #d1acf1;
+}
+
 
 /* TABLE */
 table {
@@ -77,12 +84,12 @@ th, td {
   min-width: 3.5em;
 }
 thead {
-  background: #7a7a7a;
+  background: #663399;
   color: #fcfcfc;
 }
 tbody tr:nth-child(odd){ 
   background: #fcfcfc;
 }
 tbody tr:nth-child(even){
-  background: #dcdcdc;
+  background: #d1acf1;
 }

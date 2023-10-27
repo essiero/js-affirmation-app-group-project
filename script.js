@@ -1,7 +1,11 @@
 onReady();
 
+let fireCounter = 0;
+let iceCounter = 0;
+
 function handleSubmit(event){
   event.preventDefault();
+  if(fireCounter>iceCounter || fireCounter === 0 && iceCounter === 0){
   console.log(`It worked!`);
   let affirmation = document.getElementById('aff-text').value;
   document.getElementById('aff-text').value = ''
@@ -13,10 +17,17 @@ function handleSubmit(event){
   <td>${author}</td>
   <td><button onclick="deleteAff(event)">🆒</button></td>
 </tr>`
+  } else {
+    document.getElementById('aff-text').value = '';
+    document.getElementById('aff-author').value = '';
+    return false
+  }
 }
 
 function deleteAff(event){
+  if (iceCounter > fireCounter){
   event.target.parentElement.parentElement.remove();
+  }
 }
 
 function onFireClick() {
@@ -24,10 +35,14 @@ function onFireClick() {
   let fireClick = document.getElementById("emojiBin");
   console.log(fireClick);
   emojiBin.innerHTML += `<h2>🔥</h2>`
+  fireCounter ++
+  console.log(fireCounter);
 }
 
 function onIceClick() {
   emojiBin.innerHTML += `<h2>❄️</h2>`
+  iceCounter ++;
+  console.log (iceCounter);
 }
 
 function onReady() {
